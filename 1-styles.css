@@ -38,6 +38,11 @@
     src: url(source-sans-pro/SourceSansPro-Regular.otf);
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 /* Header */
 
 .background-container {
