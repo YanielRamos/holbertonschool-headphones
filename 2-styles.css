@@ -498,7 +498,7 @@ header .menu-btn:checked~.menu-icon .navicon::after {
 	margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 1000px) {
+@media screen and (max-width: 1000px) {
 	#our-results .container {
 		justify-content: center;
 		max-width: 60%;
@@ -512,7 +512,7 @@ header .menu-btn:checked~.menu-icon .navicon::after {
 	}
 }
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
 	#our-results .top-img {
 		background-image: url("./images/headphones_hero_2.jpg");
 		height: 650px;
