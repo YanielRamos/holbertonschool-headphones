@@ -1,0 +1,697 @@
+/* Global */
+:root {
+    --color-orange: #FF6565;
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --color-text: #071629;
+    --color-grey: #979797;
+}
+
+/* Fonts */
+@font-face {
+    font-family: "Source-sans-bold";
+    src: url(source-sans-pro/SourceSansPro-Bold.otf);
+}
+@font-face {
+    font-family: "Source-sans-semibold";
+    src: url(source-sans-pro/SourceSansPro-Semibold.otf
+    );
+}
+
+@font-face {
+    font-family: "Source-sans-light";
+    src: url(source-sans-pro/SourceSansPro-Light.otf);
+}
+
+@font-face {
+    font-family: "source-sans-black";
+    src: url(source-sans-pro/SourceSansPro-Black.otf);
+}
+
+@font-face {
+    font-family: "source-sans-italic";
+    src: url(source-sans-pro/SourceSansPro-It.otf);
+}
+
+@font-face {
+    font-family: "source-sans-regular";
+    src: url(source-sans-pro/SourceSansPro-Regular.otf);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+
+.background-container {
+	background-image: url("./images/headphones_hero_1.jpg");
+	height: 800px;
+	background-position: center;
+}
+
+.navbar-menu a {
+	text-decoration: none;
+	color: var(--color-white);
+	font-size: 12px;
+    font-family: 'source-sans-bold';
+}
+
+.navbar-menu a:hover {
+	color: var(--color-orange);
+}
+
+.navbar-menu {
+	display: flex;
+	justify-content: space-around;
+}
+
+header .nav {
+	display: flex;
+	list-style-type: none;
+	text-align: center;
+}
+
+header {
+	height: 32px;
+	margin-left: auto;
+	margin-right: auto;
+	align-items: center;
+	display: flex;
+	justify-content: space-around;
+	gap: 10%;
+	padding: 30px;
+}
+
+header img {
+	height: 32px;
+	width: 161px;
+}
+
+header .menu-icon {
+	cursor: pointer;
+	padding: 1rem;
+	position: relative;
+	user-select: none;
+	display: none;
+	order: 1;
+}
+
+header .menu-icon .navicon {
+	background: var(--color-white);
+	display: block;
+	width: 1.5rem;
+	height: 0.18rem;
+	position: relative;
+	transition: background .2s ease-out;
+}
+
+header .menu-icon .navicon::before,
+header .menu-icon .navicon::after {
+	content: "";
+	display: block;
+	width: 2rem;
+	height: 100%;
+	position: absolute;
+	background: var(--color-white);
+	transition: all .2s ease-out;
+}
+
+header .menu-icon .navicon::before {
+	top: .7rem;
+}
+
+header .menu-icon .navicon::after {
+	top: -.7rem;
+}
+
+header .menu-btn {
+	display: none;
+}
+
+.menu-btn:checked~.navbar-menu {
+	display: block;
+	order: 3;
+}
+
+.menu-btn:checked~.navbar-menu .nav {
+	max-height: 100%;
+	overflow: inherit;
+}
+
+header .menu-btn:checked~.menu-icon .navicon {
+	background: transparent;
+}
+
+header .menu-btn:checked~.menu-icon .navicon::before {
+	transform: rotate(-45deg);
+}
+
+header .menu-btn:checked~.menu-icon .navicon::after {
+	transform: rotate(45deg);
+}
+
+header .menu-btn:checked~.menu-icon .navicon::before,
+header .menu-btn:checked~.menu-icon .navicon::after {
+	top: 0;
+}
+
+@media screen and (max-width: 477px) {
+	:root {
+		--header-padding: 2rem 0 0;
+	}
+
+	header {
+		background: transparent;
+		margin-left: 0;
+		margin-right: 0;
+		padding: 1rem;
+		padding-top: 2.5rem;
+		gap: 0.5rem 4rem;
+		justify-content: left;
+		flex-wrap: wrap;
+	}
+
+	header .menu-icon {
+		display: flex;
+	}
+
+	.navbar-menu {
+		display: none;
+		flex: 1;
+		flex-grow: 2;
+		align-self: flex-end;
+	}
+
+	header .nav {
+		flex-direction: column;
+		overflow: hidden;
+		max-height: 0;
+		transition: max-height .2s ease-out;
+		padding-left: 0;
+		text-align: center;
+	}
+
+	header img {
+		order: 2;
+	}
+}
+
+.nav .nav-item {
+	margin: 0 0 0 2rem;
+	padding-bottom: 2rem;
+}
+
+/* Hero */
+
+#hero {
+	height: 313px;
+	width: 637px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	color: var(--color-white);
+	margin-top: 270px;
+	max-width: 90%;
+}
+
+#hero h1 {
+	font-size: 32px;
+	font-family: 'source-sans-bold';
+	margin-bottom: 0;
+}
+
+#hero h2 {
+	font-size: 16px;
+	font-family: 'source-sans-bold';
+	margin-top: 5px;
+	max-width: 70%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#hero p {
+	font-size: 16px;
+	margin-top: 80px;
+	line-height: 26px;
+    font-family: 'source-sans-regular';
+}
+
+#hero button {
+	background-color: var(--color-orange);
+	border: none;
+	font-family: 'source-sans-bold';
+	font-size: 14px;
+    cursor: pointer;
+	padding: 14px;
+	border-radius: 24px;
+	width: 162px;
+	height: 44px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	color: var(--color-white);
+}
+
+#hero button:hover {
+	opacity: 0.9;
+}
+
+@media screen and (max-width: 477px) {
+	#hero {
+		margin-top: 220px;
+	}
+
+	#hero button {
+		margin-top: 10px;
+	}
+
+	#hero p {
+		margin-top: 40px;
+	}
+}
+
+/* icons */
+
+@font-face {
+	font-family: 'holberton_school-icon';
+	src: url('holberton_school-icon/fonts/holberton_school-icon.eot?sq4eq4');
+	src: url('holberton_school-icon/fonts/holberton_school-icon.eot?sq4eq4#iefix') format('embedded-opentype'),
+		url('holberton_school-icon/fonts/holberton_school-icon.ttf?sq4eq4') format('truetype'),
+		url('holberton_school-icon/fonts/holberton_school-icon.woff?sq4eq4') format('woff'),
+		url('holberton_school-icon/fonts/holberton_school-icon.svg?sq4eq4#holberton_school-icon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+
+[class^="holberton_school-icon-"],
+[class*=" holberton_school-icon-"] {
+	font-family: 'holberton_school-icon' !important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	color: var(--color-orange);
+	font-size: 90px;
+
+	/* font rendering */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.holberton_school-icon-arrow_1:before {
+	content: "\e900";
+}
+
+.holberton_school-icon-arrow_2:before {
+	content: "\e901";
+}
+
+.holberton_school-icon-arrow_3:before {
+	content: "\e902";
+}
+
+.holberton_school-icon-arrow_4:before {
+	content: "\e903";
+}
+
+.holberton_school-icon-arrow_5:before {
+	content: "\e904";
+}
+
+.holberton_school-icon-check:before {
+	content: "\e905";
+}
+
+.holberton_school-icon-ic_bag:before {
+	content: "\e906";
+}
+
+.holberton_school-icon-ic_cart:before {
+	content: "\e907";
+}
+
+.holberton_school-icon-ic_facebook:before {
+	content: "\e908";
+}
+
+.holberton_school-icon-ic_hearing:before {
+	content: "\e909";
+}
+
+.holberton_school-icon-ic_instagram:before {
+	content: "\e90a";
+}
+
+.holberton_school-icon-ic_laptop:before {
+	content: "\e90b";
+}
+
+.holberton_school-icon-ic_money:before {
+	content: "\e90c";
+}
+
+.holberton_school-icon-ic_music:before {
+	content: "\e90d";
+}
+
+.holberton_school-icon-ic_sound:before {
+	content: "\e90e";
+}
+
+.holberton_school-icon-ic_twitter:before {
+	content: "\e90f";
+}
+
+.holberton_school-icon-ic_video:before {
+	content: "\e910";
+}
+
+.holberton_school-icon-menu:before {
+	content: "\e911";
+}
+
+.holberton_school-icon-search_1:before {
+	content: "\e912";
+}
+
+.holberton_school-icon-search_2:before {
+	content: "\e913";
+}
+
+.holberton_school-icon-star:before {
+	content: "\e914";
+}
+
+/* what we do */
+
+.top {
+	text-align: center;
+	max-width: 90%;
+	width: 637px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.top h1 {
+	margin-top: 6rem;
+	font-weight: 600;
+	font-size: 32px;
+    font-family: 'source-sans-semibold';
+}
+
+.top p {
+	font-size: 16px;
+	line-height: 26px;
+	margin-bottom: 5.5rem;
+	margin-top: 2.5rem;
+    font-family: 'source-sans-regular';
+}
+
+.container {
+	display: flex;
+	max-width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 7rem;
+}
+
+.sub-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.sub-container h2 {
+	font-size: 18px;
+	font-weight: 600;
+    font-family: 'source-sans-semibold';
+}
+
+.sub-container p {
+	max-width: 70%;
+	text-align: center;
+	line-height: 26px;
+    font-family: 'source-sans-regular';
+}
+
+@media screen and (max-width: 1000px) {
+	.container {
+		flex-wrap: wrap;
+		max-width: 100%;
+		justify-content: center;
+		gap: 4em;
+	}
+}
+
+/* our results */
+
+#our-results {
+	background-image: url("./images/headphones_hero_2.jpg");
+	height: 650px;
+	width: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#our-results {
+	color: var(--color-white);
+}
+
+#our-results .top h1 {
+	padding-top: 10rem;
+}
+
+#our-results .container {
+	justify-content: space-between;
+	max-width: 70%;
+}
+
+#our-results .sub-container {
+	box-sizing: border-box;
+	position: relative;
+	width: 170px;
+	height: 156px;
+	background-color: var(--color-orange);
+	margin: 35px 0;
+	clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+	justify-content: center;
+}
+
+#our-results h2 {
+	font-size: 46px;
+	font-family: 'source-sans-bold';
+	margin: 0;
+	margin-top: 2rem;
+}
+
+#our-results p {
+	font-size: 16px;
+    font-family: 'source-sans-regular';
+	margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 1000px) {
+	#our-results .container {
+		justify-content: center;
+		max-width: 60%;
+		gap: 0 5rem;
+	}
+
+	#our-results {
+		height: auto;
+		width: auto;
+		background-position: top;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	#our-results .top-img {
+		background-image: url("./images/headphones_hero_2.jpg");
+		height: 650px;
+		width: 100%;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		margin-bottom: -12rem;
+	}
+
+	#our-results {
+		background-color: var(--color-text);
+		background-image: none;
+	}
+}
+
+/* Contact Us */
+
+#contact-us {
+	text-align: center;
+}
+
+#contact-us label {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+.visually-hidden:not(:focus):not(:active) {
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+#contact-us h1 {
+	font-size: 32px;
+    font-weight: 600;
+    font-family: 'source-sans-semibold';
+	margin-top: 6rem;
+}
+
+/* Contact information section */
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    border: none;
+    padding: 0 0 2rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    position: relative;
+    width: 21rem;
+    padding: 1.2rem;
+    line-height: 1;
+    border: none;
+    outline: 0;
+    border-bottom: 1px solid var(--color-grey);
+    padding-right: 3rem;
+    padding-left: 0;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-bottom: .1rem solid var(--color-grey);
+}
+
+::placeholder {
+    font-weight: 600;
+    font-size: 14px;
+    font-family: 'source-sans-semibold';
+    color: var(--color-black);
+}
+
+/* Form group */
+
+.form-group {
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Form field */
+
+.form-field-container {
+    position: relative;
+}
+
+.form-field-icon {
+    font-style: normal;
+}
+
+/* Form help */
+
+.form-group .form-help {
+    margin: 0;
+    line-height: 1.3;
+    letter-spacing: .019rem;
+    color: var(--color-grey);
+    font-size: 14px;
+    max-height: 0;
+    transition: .3s;
+    overflow: hidden;
+}
+
+.form-group:focus-within .form-help {
+    max-height: 20rem;
+    margin: .4rem 0 0;
+}
+
+/* Form error handling */
+
+input:not(:placeholder-shown)~.form-field-icon::after {
+    height: 100%;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 1.3em;
+}
+
+/* Error handling check marks */
+
+input:required:invalid:not(:focus):not(:placeholder-shown)~.form-field-icon::after {
+    content: '✘';
+    color: red;
+}
+
+input:required:valid~.form-field-icon::after {
+    content: '✔';
+    color: green;
+}
+
+input:required:valid~.form-help {
+    max-height: 0;
+}
+
+/* Handling error input colors */
+
+input:required:invalid:not(:focus):not(:placeholder-shown),
+textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border: 0.1rem solid red;
+}
+
+input:required:valid:not(:placeholder-shown),
+textarea:valid:not(:placeholder-shown) {
+    border: 0.1rem solid green;
+}
+    
+#contact-us button {
+    background-color: var(--color-orange);
+    border: none;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 14px;
+    border-radius: 24px;
+    width: 162px;
+    height: 44px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--color-white);
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+    
+@media screen and (max-width: 480px) {
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        width: 90%;
+        padding-right: 0;
+    }
+}
